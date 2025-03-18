@@ -1,0 +1,322 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+/* Header dengan Logo dan Navigasi */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px; /* Tambahkan padding untuk ruang di sekitar logo dan teks */
+    display: flex;
+    align-items: center; /* Pusatkan vertikal */
+    justify-content: space-between; /* Logo dan teks di kiri, navigasi di kanan */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Pusatkan logo dan teks secara vertikal */
+}
+
+.logo-container img {
+    height: 50px; /* Sesuaikan tinggi logo */
+    margin-right: 15px; /* Jarak antara logo dan teks */
+}
+
+.logo-container h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #fff;
+    position: relative;
+}
+
+/* Efek bendera merah putih pada teks "Indonesia Today" */
+.logo-container h1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px; /* Sesuaikan posisi garis merah */
+    width: 5px; /* Lebar garis merah */
+    height: 100%;
+    background-color: #ff0000; /* Warna merah */
+}
+
+.logo-container h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -5px; /* Sesuaikan posisi garis putih */
+    width: 5px; /* Lebar garis putih */
+    height: 100%;
+    background-color: #fff; /* Warna putih */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end; /* Navigasi di sebelah kanan */
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
+}
+
+/* Trending News Section */
+#trending {
+    background-color: #444;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+#trending h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Artikel Utama */
+article {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+    max-width: 800px;
+}
+
+body.dark-mode article {
+    background-color: #444;
+    color: #f4f4f4;
+}
+
+article h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #555;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    display: none;
+}
+
+#back-to-top:hover {
+    background-color: #555;
+}
+
+/* Share Buttons */
+.share-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.share-buttons a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+body.dark-mode .share-buttons a {
+    color: #f4f4f4;
+}
+
+.share-buttons a:hover {
+    color: #ff6347;
+}
+
+/* Loading Animation */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+#loading.hide {
+    display: none;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #333;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Related News Section */
+#related-news {
+    padding: 20px;
+    text-align: center;
+    max-width: 1200px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the section */
+}
+
+.related-news-container {
+    display: flex;
+    justify-content: center; /* Center the items */
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+.related-news-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 40px); /* Three items per row with gap */
+    text-align: left;
+    padding: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.related-news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.related-news-item img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.related-news-content {
+    padding: 10px;
+}
+
+.related-news-content h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.related-news-content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+.related-news-content a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.related-news-content a:hover {
+    text-decoration: underline;
+}
+
+/* Advertisement Section */
+#advertisement {
+    padding: 20px;
+    text-align: center;
+    max-width: 1200px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the section */
+}
+
+.ad-container {
+    display: flex;
+    justify-content: center; /* Center the ads */
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.ad-container img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.ad-container img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
